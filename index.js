@@ -11,7 +11,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'includes')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// define routes
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -20,9 +19,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(require('./mysql'));
+app.use(require('./routers'));
 
 var port = process.env.PORT || 3000;
 server.listen(port, function(){
-    console.log("app http ready on port "+port);
+    console.log("App ready on port "+port);
 });
