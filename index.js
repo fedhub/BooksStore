@@ -1,15 +1,15 @@
 var express    = require("express");
 var app        = express();
 var server     = require('http').createServer(app);
-var path       = require('path');
-var bodyParser = require('body-parser');
+//var path       = require('path');
+//var bodyParser = require('body-parser');
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// use middleware
-app.use(express.static(path.join(__dirname, 'includes')));
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.set('view engine', 'ejs');
+//app.set('views', path.join(__dirname, 'views'));
+//
+//// use middleware
+//app.use(express.static(path.join(__dirname, 'includes')));
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
